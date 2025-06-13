@@ -1,98 +1,103 @@
-🔍 Research Assistant – AI-Powered Summarizer Extension
+# 🧠 Research Assistant – AI-Powered Text Summarizer
 
-A smart Chrome Extension that turns copied or selected text into **concise bullet-point summaries** using the **Gemini API**, built with **Java Spring Boot** and **HTML/CSS/JS**.
+Research Assistant is a productivity tool that allows users to **instantly convert copied or selected text into concise bullet points** using the **Google Gemini API**. Designed for students, researchers, and professionals, it simplifies information overload and improves focus by providing real-time summaries of long-form content.
 
 ---
 
 ## 🚀 Features
 
-- 📋 Auto-detects copied text
-- ✨ Generates bullet-point summaries using Gemini
-- 💡 Helps students, researchers, and developers quickly grasp long or complex content
-- 🧠 AI-powered, responsive, and clean UI
-
----
-
-## 📸 Screenshots
-
-| Copy Text | See Summary |
-|-----------|-------------|
---screenshots are in the above description.
-
+- 📋 Auto-generates bullet point summaries from any selected/copied text  
+- ⚡ Fast and accurate AI-powered processing via Gemini API  
+- 🌐 Simple web interface for instant interaction  
+- 🧩 Seamless frontend-backend integration  
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer    | Tech Used                     |
-|----------|-------------------------------|
-| Frontend | HTML, CSS, JavaScript         |
-| Backend  | Java, Spring Boot             |
-| AI       | Google Gemini API             |
-| Tools    | Git, VS Code, IntelliJ IDEA   |
+- **Frontend**: HTML, CSS, JavaScript (VS Code)
+- **Backend**: Java + Spring Boot (IntelliJ Community Edition)
+- **AI API**: Google Gemini API
+- **Build Tool**: Maven  
+- **Communication**: RESTful API (JSON-based)
 
 ---
 
-## 📁 Folder Structure
+## 💻 How to Run the Project Locally
 
-research-assistant/
-├── frontend/ # Chrome Extension (HTML, JS, CSS)
-├── backend/ # Spring Boot app (Gemini API integration)
-├── screenshots/ # UI screenshots for demo
-└── README.md
-
-yaml
-Copy code
+### ✅ Prerequisites
+- Node.js & npm installed
+- Java 17+ installed
+- IntelliJ Community Edition (for backend)
+- VS Code (for frontend)
+- Maven installed (or use IntelliJ Maven support)
+- A valid Gemini API key from Google
 
 ---
 
-## ⚙️ How to Run the Project
+## 🔧 Backend Setup (Spring Boot)
 
-### ✅ 1. Run the Backend (Spring Boot)
+1. Open the `backend` folder in IntelliJ.
+2. Import it as a **Maven project**.
+3. Add your **Gemini API key** in `application.properties`:
+   ```properties
+   gemini.api.key=YOUR_API_KEY_HERE
 
-Make sure you have Java 17+ and Maven installed.
 
-```bash
-cd backend
-./mvnw spring-boot:run
-API Endpoint: http://localhost:8080/api/summarize
+4. Run the Spring Boot application:
+   - Option 1: Click the green run icon in IntelliJ on the main class (e.g., `ResearchAssistantApplication.java`)
+   - Option 2: Run from terminal:
+     ```bash
+     mvn spring-boot:run
+     ```
 
-Update your Gemini API key in backend/src/main/resources/application.properties:
+By default, the backend will run on:  
 
-properties
-Copy code
-gemini.api.url=https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent
-gemini.api.key=YOUR_GEMINI_API_KEY
-✅ 2. Load the Chrome Extension (Frontend)
-Open Chrome and go to chrome://extensions/
 
-Enable Developer Mode
+---
 
-Click Load Unpacked
+## 🌐 Frontend Setup (VS Code)
 
-Select the frontend/ folder
+1. Open the `frontend` folder in VS Code.
+2. Make sure your HTML file (e.g., `index.html`) has the correct JavaScript code to call the backend API.
+3. To run it locally, you can use any static server. For example:
+   ```bash
+   npm install -g live-server
+   live-server
 
-Use it on any website — copy text → summary appears!
+📂 Project Structure
+Research-Assistant/
+├── backend/               # Spring Boot application
+│   └── src/
+│       └── main/
+│           ├── java/     # Java source files
+│           └── resources/
+│               └── application.properties
+├── frontend/              # Frontend files
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+├── README.md
 
-💻 Build Your Own Version
-Want to build your own version? Here's how:
 
-Clone this repo:
+🔍 Example Usage
+Start the backend server (Spring Boot).
+Open the frontend in the browser using live-server or open index.html directly.
+Copy any long text (from an article, document, etc.).
+The assistant will automatically detect it and show a summarized version in bullet points.
 
-bash
-Copy code
-git clone https://github.com/your-username/research-assistant.git
-cd research-assistant
-Replace Gemini API Key
+✨ Future Enhancements
+Chrome extension for easier use on any website
+User authentication with history tracking
+Upload and summarize PDFs or documents
+Language translation support
+Dark mode for UI
 
-Go to backend/src/main/resources/application.properties
+📜 License
+This project is open-sourced under the MIT License. Feel free to use, modify, and distribute.
 
-Replace with your own key from Gemini API Console
-
-Customize the Extension
-
-Modify content.js, popup.html, or styles in frontend/
-
-Run backend + load extension
-
-✅ Done! You now have your own Research Assistant.
+🙌 Acknowledgements
+Google Gemini API
+Spring Boot community
+Frontend open-source libraries
+Everyone who provided feedback during development
